@@ -3,7 +3,7 @@
 
 
 
-    {{-- Role Owner --}}
+    {{-- Role Admin --}}
     @if (session('id_akses') == 1)
         <li class="nav-item {{ Request::is('admin/dashboard*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ url('admin/dashboard') }}">
@@ -50,29 +50,31 @@
     @endif
 
 
-    {{-- Role Kasir --}}
-    @if (session('id_role') == 2)
-        <li class="{{ Request::is('kasir/dashboard*') ? 'mm-active' : '' }}">
-            <a href="<?= url('kasir/dashboard') ?>">
-                <div class="parent-icon"><i class="bi bi-house-fill"></i></div>
-                <div class="menu-title">Dashboard</div>
+    {{-- Role User --}}
+    @if (session('id_akses') == 2)
+        <li class="nav-item {{ Request::is('user/dashboard*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ url('user/dashboard') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('kasir/pelanggan*') ? 'mm-active' : '' }}">
-            <a href="<?= url('kasir/pelanggan') ?>">
-                <div class="parent-icon"><i class="lni lni-network"></i>
-                </div>
-                <div class="menu-title">Pelanggan</div>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item {{ Request::is('user/layanan*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ url('user/layanan') }}">
+                <i class="fas fa-fw fa-clone"></i>
+                <span>Layanan</span>
             </a>
         </li>
-        <li class="{{ Request::is('kasir/transaksi*') ? 'mm-active' : '' }}">
-            <a href="<?= url('kasir/transaksi') ?>">
-                <div class="parent-icon"><i class="lni lni-agenda"></i>
-                </div>
-                <div class="menu-title">Transaksi</div>
+
+        <li class="nav-item {{ Request::is('user/transaksi*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ url('user/transaksi') }}">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <span>Transaksi</span>
             </a>
         </li>
+        <hr class="sidebar-divider">
     @endif
 
     <!--end navigation-->

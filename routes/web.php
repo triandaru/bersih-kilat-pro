@@ -6,7 +6,13 @@ use App\Http\Controllers\Admin\{
     DashboardController as AdminDashboardController,
     LayananController as AdminLayananController,
     TransaksiController as AdminTransaksiController,
-    UserController
+    UserController,
+    LaporanController as AdminLaporanController
+};
+use App\Http\Controllers\User\{
+    DashboardController as UserDashboardController,
+    LayananController as UserLayananController,
+    TransaksiController as UserTransaksiController
 };
 /*
 |--------------------------------------------------------------------------
@@ -63,5 +69,32 @@ Route::prefix('admin')->name('admin.')->middleware('checkAkses:admin')->group(fu
         Route::get('{id_user}/edit', [UserController::class, 'edit'])->name('edit');
         Route::put('{id_user}', [UserController::class, 'update'])->name('update');
         Route::delete('{id_user}', [UserController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('laporan')->name('laporan.')->group(function () {
+        Route::get('/', [AdminLaporanController::class, 'index'])->name('index');
+        Route::post('/cetak', [AdminLaporanController::class, 'cetak'])->name('cetak');
+    });
+});
+
+Route::prefix('user')->name('user.')->middleware('checkAkses:user')->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('layanan')->name('layanan.')->group(function () {
+        Route::get('/', [AdminLayananController::class, 'index'])->name('index');
+        Route::get('/create', [AdminLayananController::class, 'create'])->name('create');
+        Route::post('/create', [AdminLayananController::class, 'store'])->name('store');
+        Route::get('{id_layanan}/edit', [AdminLayananController::class, 'edit'])->name('edit');
+        Route::put('{id_layanan}', [AdminLayananController::class, 'update'])->name('update');
+        Route::delete('{id_layanan}', [AdminLayananController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('transaksi')->name('transaksi.')->group(function () {
+        Route::get('/', [AdminTransaksiController::class, 'index'])->name('index');
+        route::get('/create', [AdminTransaksiController::class, 'create'])->name('create');
+        route::post('/create', [AdminTransaksiController::class, 'store'])->name('store');
+        Route::get('{id_transaksi}/edit', [AdminTransaksiController::class, 'edit'])->name('edit');
+        Route::put('{id_transaksi}', [AdminTransaksiController::class, 'update'])->name('update');
+        Route::delete('{id_transaksi}', [AdminTransaksiController::class, 'destroy'])->name('destroy');
     });
 });
