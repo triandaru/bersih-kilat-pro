@@ -12,7 +12,10 @@ class LaporanController extends Controller
 {
     public function index()
     {
-        return view('main.admin.laporan.index');
+
+        return view('main.admin.laporan.index', [
+            'title' => 'Laporan' // atau teks lain yang sesuai
+        ]);
     }
 
     public function cetak(Request $request)

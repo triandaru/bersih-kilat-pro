@@ -8,10 +8,10 @@
     <meta name="description" content="Aplikasi Jasa Cuci Mobil dan Motor">
 
     <!-- Title -->
-    <title>Aplikasi Jasa Cuci Mobil dan Motor</title>
+    <title>Bersih Kilat Pro | Aplikasi Jasa Cuci</title>
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,11 +36,11 @@
                                 <div class="p-5">
                                     <!-- logo -->
                                     <div class="text-center pb-3">
-                                        <img src="assets/img/logo-login.png" alt="Logo" width="70">
+                                        <img src="assets/img/icon.png" alt="Logo" width="70">
                                     </div>
                                     <!-- judul -->
                                     <div class="text-center pb-3">
-                                        <h1 class="h5 text-gray-900 mb-4">Aplikasi Jasa Cuci Mobil dan Motor</h1>
+                                        <h1 class="h5 text-gray-900 mb-4">Bersih Kilat Pro</h1>
                                     </div>
 
                                     @error('error')

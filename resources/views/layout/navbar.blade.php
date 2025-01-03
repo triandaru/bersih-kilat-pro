@@ -9,10 +9,10 @@
     <meta name="author" content="Code Null">
 
     <!-- Title -->
-    <title>Aplikasi Jasa Cuci Mobil dan Motor</title>
+    <title>{{ $title }}</title>
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="<?= url('assets') ?>/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= url('assets') ?>/img/icon.png" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="<?= url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,9 +52,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?module=dashboard">
                 <div class="sidebar-brand-icon bg-white rounded-circle">
-                    <img src="<?= url('assets') ?>/img/logo-dashboard.png" alt="Logo" width="40">
+                    <img src="<?= url('assets') ?>/img/icon.png" alt="Logo" width="40">
                 </div>
-                <div class="sidebar-brand-text mx-3">CUCI STEAM</div>
+                <div class="sidebar-brand-text mx-3">Bersih Kilat Pro</div>
             </a>
 
             <!-- Divider -->
@@ -160,7 +160,6 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= url('assets') ?>/vendor/jquery/jquery.min.js"></script>
-
     <script src="<?= url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -170,18 +169,19 @@
     <script src="<?= url('assets') ?>/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <!-- DataTables JS -->
     <script src="<?= url('assets') ?>/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= url('assets') ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- DataTables JS -->
+
+
     <!-- Datepicker JS -->
     <script src="<?= url('assets') ?>/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
     <!-- maskMoney JS -->
     <script src="<?= url('assets') ?>/vendor/jquery-maskmoney/jquery.maskMoney.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="<?= url('assets') ?>/js/plugin.js"></script>
-    <script src="<?= url('assets') ?>/js/form-validation.js"></script>
-    <script src="<?= url('https://code.jquery.com/jquery-3.6.0.min.js') ?>"></script>
+    <script src="<?= url('assets') ?>/js/demo/datatables-demo.js"></script>
     <script src="<?= url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js') ?>"></script>
 
 

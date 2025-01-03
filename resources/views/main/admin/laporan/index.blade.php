@@ -19,7 +19,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tanggal Awal <span class="text-danger">*</span></label>
-                                <input type="text" name="tanggal_awal" class="form-control date-picker"
+                                <input type="date" name="tanggal_awal" class="form-control date-picker"
                                     data-date-format="dd-mm-yyyy" autocomplete="off" required>
                                 <div class="invalid-feedback">Tanggal awal tidak boleh kosong.</div>
                             </div>
@@ -28,7 +28,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Tanggal Akhir <span class="text-danger">*</span></label>
-                                <input type="text" name="tanggal_akhir" class="form-control date-picker"
+                                <input type="date" name="tanggal_akhir" class="form-control date-picker"
                                     data-date-format="dd-mm-yyyy" autocomplete="off" required>
                                 <div class="invalid-feedback">Tanggal akhir tidak boleh kosong.</div>
                             </div>

@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Layanan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,12 +15,20 @@ class TransaksiController extends Controller
 
     public function index()
     {
-        $transaksis = Transaksi::with('layanan')->get();
-        return view('main.admin.transaksi.index', compact('transaksis'));
+        $title = 'Transaksi - Data Transaksi Per Layanan';
+
+        $transaksis = DB::table('transaksis as bm')
+            ->leftJoin('layanans as b', 'bm.layanan', '=', 'b.id_layanan')
+            ->select('bm.*', 'b.nama_layanan')
+            ->get();
+
+        // $transaksis = Transaksi::with('layanan')->get();
+        return view('main.admin.transaksi.index', compact('transaksis', 'title'));
     }
 
     public function create(Request $request)
     {
+        $title = 'Tambah Transaksi';
         // Mengambil layanan dari database
         $layanan = Layanan::orderBy('nama_layanan', 'asc')->get();
 
@@ -30,7 +39,7 @@ class TransaksiController extends Controller
         // Mengatur nomor urut sebagai id_transaksi
         $idTransaksi = $nomorUrut;
 
-        return view('main.admin.transaksi.create', compact('layanan', 'idTransaksi'));
+        return view('main.admin.transaksi.create', compact('layanan', 'idTransaksi', 'title'));
     }
 
 
@@ -72,7 +81,7 @@ class TransaksiController extends Controller
         return view('main.admin.transaksi.edit', [
             'transaksi' => $transaksi,
             'layanans' => $layanans,
-            'title' => 'Laman Edit'
+            'title' => 'Edit Transaksi'
         ]);
     }
     public function update(Request $request, $id_transaksi)

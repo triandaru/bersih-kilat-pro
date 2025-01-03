@@ -12,7 +12,7 @@
         <!-- menampilkan pesan selamat datang -->
         <div class="alert alert-info alert-dismissible fade show py-3 mb-4" role="alert">
             <i class="fas fa-user mr-2"></i>Selamat datang kembali <strong>{{ $user->nama_user }}</strong> di Aplikasi Jasa
-            Cuci Mobil dan Motor. Anda login sebagai <strong>{{ $user->akses }}</strong>.
+            Cuci Mobil dan Motor. Anda login sebagai <strong>Admin</strong>.
         </div>
 
         <div class="row">

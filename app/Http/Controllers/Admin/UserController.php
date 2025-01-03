@@ -20,17 +20,19 @@ class UserController extends Controller
 
     public function index()
     {
+        $title = 'Manajemen User';
         $users = User::with('akses')->orderBy('id_user', 'desc')->get();
-        return view('main.admin.manajemen_user.index', compact('users'));
+        return view('main.admin.manajemen_user.index', compact('users', 'title'));
     }
 
     public function create(Request $request)
     {
+        $title = 'Tambah User';
         // Mengambil layanan dari database
         $akses = HakAkses::orderBy('nama_akses', 'asc')->get();
 
 
-        return view('main.admin.manajemen_user.create', compact('akses'));
+        return view('main.admin.manajemen_user.create', compact('akses', 'title'));
     }
 
     public function store(Request $request)
@@ -57,11 +59,12 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        $title = 'Edit User';
         // Ambil data user dan hak akses
         $user = User::findOrFail($id);
         $akses = HakAkses::all();
 
-        return view('main.admin.manajemen_user.edit', compact('user', 'akses'));
+        return view('main.admin.manajemen_user.edit', compact('user', 'akses', 'title'));
     }
 
     public function update(Request $request)

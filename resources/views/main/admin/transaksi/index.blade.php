@@ -50,7 +50,7 @@
                                     </td>
                                     <td>{{ $data->nama_pelanggan }}</td>
                                     <td class="text-center">{{ $data->no_kendaraan }}</td>
-                                    <td>{{ $data->layanan }}</td>
+                                    <td>{{ $data->nama_layanan }}</td>
                                     <td class="text-right">Rp. {{ number_format($data->total_biaya, 0, '', '.') }}</td>
                                     <td class="text-center">
                                         <div>
@@ -103,7 +103,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 Apakah Anda yakin ingin menghapus data transaksi
-                                                <strong>{{ $data->nama_transaksi }}</strong>?
+                                                <strong>{{ $data->id_transaksi }}</strong>?
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-secondary" type="button"

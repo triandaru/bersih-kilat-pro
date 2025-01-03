@@ -12,6 +12,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
+        $title = 'Dashboard - Laporan Pendapatan dan Transaksi';
+
         // Mengambil semua nama layanan
         $layanan = Layanan::with('transaksis')
             ->leftJoin('transaksis', 'layanans.id_layanan', '=', 'transaksis.layanan')
@@ -31,6 +34,6 @@ class DashboardController extends Controller
         // Menghitung jumlah transaksi per layanan
         $jumlahTransaksiPerLayanan = $totallayanan->pluck('jumlah')->toArray();
 
-        return view('main.admin.dashboard', compact('namaLayanan', 'totalPendapatanPerLayanan', 'jumlahTransaksiPerLayanan'));
+        return view('main.admin.dashboard', compact('title', 'namaLayanan', 'totalPendapatanPerLayanan', 'jumlahTransaksiPerLayanan'));
     }
 }
